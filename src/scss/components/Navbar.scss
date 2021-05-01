@@ -1,0 +1,69 @@
+#nav {
+  padding: 30px;
+
+  a {
+    text-decoration: none;
+    color: map-get($map: $color-palette, $key: "fluo");
+
+    &.router-link-exact-active {
+   
+    }
+  }
+}
+
+.btn{
+  display: inline-block;
+  position: relative;
+  font-size: 4rem;
+  text-decoration: none;
+  color: map-get($map: $color-palette, $key: "fluo");
+  border: .1em solid map-get($map: $color-palette, $key: "fluo");
+  border-radius: 0.25em;
+  padding: 0.25em 1em;
+  cursor: pointer;
+  text-shadow: 0 0 0.125em hsla(0, 0%, 100%, 0.4), 0 0 0.45em map-get($map: $color-palette, $key: "fluo");
+  box-shadow: inset 0 0 0.5em map-get($map: $color-palette, $key: "fluo"), 0 0 0.5em map-get($map: $color-palette, $key: "fluo");
+  transition: background-color 100ms linear; 
+}
+
+.btn::before{
+  position: absolute;
+  content: '';
+  background-color: map-get($map: $color-palette, $key: "fluo");
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1.5em);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.btn::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 2em 0.5em map-get($map: $color-palette, $key: "fluo");
+  opacity: 0;
+  transition: opacity 100ms linear; 
+  background-color: map-get($map: $color-palette, $key: "fluo");
+  z-index: -1;
+}
+
+.btn:hover,
+.btn:focus{
+  color: map-get($map: $color-palette, $key: "background");
+  text-shadow: 0 0 1em 0.5em map-get($map: $color-palette, $key: "background");
+}
+.btn:hover:before,
+.btn:focus:before{
+  opacity: 1;
+}
+.btn:hover::after,
+.btn:focus::after{
+  opacity: 1;
+}

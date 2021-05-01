@@ -1,0 +1,13 @@
+//Media queries transitions - Bootstrap
+$sm: 768px;
+$md: 990px;
+$lg: 1220px;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+//Palette
+$color-palette: (
+  "fluo" : hsl(317, 100%, 54%),
+  "background" : hsl(323, 21%, 16%)
+);
